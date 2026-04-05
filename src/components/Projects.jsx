@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Projects() {
   const projects = [
@@ -93,6 +94,19 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 flex justify-center"
+        >
+          <Link to="/portfolio" className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-slate-700 hover:border-blue-500 text-white rounded-full font-medium transition-all group">
+            Ver Portfólio Completo
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
+        
       </div>
     </section>
   );
