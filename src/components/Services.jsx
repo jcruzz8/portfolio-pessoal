@@ -1,4 +1,4 @@
-import { MonitorSmartphone, Server, LineChart, DiscIcon, MousePointerBanIcon, PhoneIcon, LucidePhone, PanelRightOpen, SmartphoneIcon } from 'lucide-react';
+import { MonitorSmartphone, Server, LineChart, SmartphoneIcon, Euro, Globe2, Wrench } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Services() {
@@ -47,7 +47,7 @@ export default function Services() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -67,6 +67,53 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+        >
+          {/* Brilho subtil no canto do card de preços */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />
+
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-slate-50 mb-3">Os Preços <span className="text-blue-500">+</span> Competitivos</h3>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Ofereço a melhor relação qualidade/preço do mercado para soluções de engenharia, ajustadas à realidade do seu negócio.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Bloco 1: Criação */}
+            <div className="flex flex-col items-center text-center p-6 bg-slate-950/50 rounded-2xl border border-slate-800/50">
+              <Euro className="w-8 h-8 text-blue-400 mb-4" />
+              <h4 className="text-lg font-bold text-slate-200 mb-2">A partir de 150€</h4>
+              <p className="text-sm text-slate-400">
+                Para o site mais básico (Landing Page simples). O valor final varia mediante a complexidade, design e funcionalidades exigidas pelo projeto.
+              </p>
+            </div>
+
+            {/* Bloco 2: Custos Anuais */}
+            <div className="flex flex-col items-center text-center p-6 bg-slate-950/50 rounded-2xl border border-slate-800/50">
+              <Globe2 className="w-8 h-8 text-blue-400 mb-4" />
+              <h4 className="text-lg font-bold text-slate-200 mb-2">30€ a 40€ / Ano</h4>
+              <p className="text-sm text-slate-400">
+                Custo de renovação para manter o site online (Servidor + Domínio). Este valor pode ser ajustado caso já possua o seu próprio domínio.
+              </p>
+            </div>
+
+            {/* Bloco 3: Manutenção */}
+            <div className="flex flex-col items-center text-center p-6 bg-slate-950/50 rounded-2xl border border-slate-800/50">
+              <Wrench className="w-8 h-8 text-blue-400 mb-4" />
+              <h4 className="text-lg font-bold text-slate-200 mb-2">Evolução Contínua</h4>
+              <p className="text-sm text-slate-400">
+                Opcional. Realizo manutenções mensais e desenvolvo novas funcionalidades (atualizações extra) sob orçamento ajustado à nova implementação.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+        
       </div>
     </section>
   );

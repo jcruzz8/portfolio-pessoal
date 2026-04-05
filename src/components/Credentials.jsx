@@ -40,7 +40,7 @@ export default function Credentials() {
             
             {/* O href deve apontar para o teu ficheiro PDF colocado na pasta public */}
             <a 
-              href="/José-Cruz-FlowCV.pdf" 
+              href="/José_Cruz-FlowCV.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-6 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-blue-500 text-white rounded-xl font-medium transition-all group shadow-lg"

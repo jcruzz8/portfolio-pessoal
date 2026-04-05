@@ -5,9 +5,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Sobre mim', href: '#sobre' },
-    { name: 'Serviços', href: '#servicos' },
-    { name: 'Projetos', href: '#projetos' },
+    { name: 'Sobre mim', href: '/#sobre' },
+    { name: 'Serviços', href: '/#servicos' },
+    { name: 'Projetos', href: '/portfolio' },
   ];
 
   return (
@@ -15,7 +15,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logotipo */}
-        <a href="#" className="text-2xl font-bold tracking-tighter text-slate-50">
+        <a href="/#" className="text-2xl font-bold tracking-tighter text-slate-50">
           José <span className="text-blue-500">Cruz</span>
         </a>
 
