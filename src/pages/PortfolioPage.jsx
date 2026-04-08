@@ -13,40 +13,31 @@ export default function PortfolioPage() {
   // Aqui vais colocar TODOS os teus projetos reais
   const allProjects = [
     {
-      title: "Plataforma E-commerce B2B",
-      description: "Aumentou as conversões online em 40% ao modernizar a interface.",
-      tags: ["React", "Node.js", "PostgreSQL"],
-      liveUrl: "#", githubUrl: "#", gradient: "from-blue-600 to-cyan-500"
+      title: "Portfólio Web Developer",
+      description: "Construído de raiz para demonstrar as minhas competências em desenvolvimento front-end moderno. Destaca-se pelas animações fluidas e performance otimizada.",
+      tags: ["React", "Tailwind CSS", "JavaScript"],
+      liveUrl: "https://josecruzportfolio.pt/",
+      githubUrl: "https://github.com/jcruzz8/portfolio-pessoal",
+      image: "/projetos/portfolio-preview.png",
+      gradient: "from-blue-600 to-cyan-500"
     },
     {
-      title: "Dashboard de Gestão Interna",
-      description: "Automatizou o processamento de dados, poupando 15 horas semanais.",
-      tags: ["React", "TypeScript", "Firebase"],
-      liveUrl: "#", githubUrl: "#", gradient: "from-emerald-500 to-teal-500"
+      title: "Stand Automóvel - NCRUZ CARROS",
+      description: "Construído de raíz para um stand automóvel local, com integração de catálogo de veículos, sistema de contacto e otimização SEO para aumentar a visibilidade online.",
+      tags: ["React", "Tailwind CSS", "JavaScript"],
+      liveUrl: "https://ncruzcarros.pt/",
+      githubUrl: "https://github.com/jcruzz8/NCruzCarros",
+      image: "/projetos/ncruzcarros-preview.png",
+      gradient: "from-emerald-500 to-teal-500"
     },
     {
-      title: "App de Agendamento Clínico",
-      description: "Reduziu as faltas a consultas em 25% através de SMS.",
-      tags: ["React Native", "Tailwind"],
-      liveUrl: "#", githubUrl: "#", gradient: "from-purple-600 to-pink-500"
-    },
-    {
-      title: "Site Institucional para Advocacia",
-      description: "Aumentou a captação de leads com um formulário otimizado.",
-      tags: ["Next.js", "Tailwind CSS"],
-      liveUrl: "#", githubUrl: "#", gradient: "from-slate-600 to-slate-400"
-    },
-    {
-      title: "Sistema de Faturação Web",
-      description: "Integração com AT e geração de PDFs em tempo real.",
-      tags: ["Vue.js", "PHP", "MySQL"],
-      liveUrl: "#", githubUrl: "#", gradient: "from-indigo-600 to-blue-500"
-    },
-    {
-      title: "Blog Otimizado (SEO)",
-      description: "Alcançou a 1ª página do Google em 3 meses de conteúdo.",
-      tags: ["Astro", "Markdown"],
-      liveUrl: "#", githubUrl: "#", gradient: "from-orange-500 to-red-500"
+      title: "Stalker.ia - Landing Page Corporativa",
+      description: "Desenvolvimento de uma plataforma web de alta performance para uma agência de Automação de IA. Construída com Next.js e TypeScript para máxima velocidade e SEO, com estilização responsiva em Tailwind CSS.",
+      tags: ["React", "Tailwind CSS", "JavaScript", "TypeScript", "Next.js"],
+      liveUrl: "https://www.stalkeragent.pt/",
+      githubUrl: "https://github.com/jcruzz8/stalker.ia",
+      image: "/projetos/stalkeragent-preview.png",
+      gradient: "from-purple-600 to-pink-500"
     }
   ];
 
@@ -72,9 +63,23 @@ export default function PortfolioPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allProjects.map((project, index) => (
             <motion.div key={index} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.05 }} className="bg-slate-900/40 rounded-3xl overflow-hidden border border-slate-800/60 hover:border-slate-500/50 transition-all flex flex-col group">
-              <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity`}>
-                 <span className="text-white/80 font-bold tracking-widest mix-blend-overlay">PROJETO</span>
+              
+              {/* Lógica Condicional para Imagem vs Gradiente */}
+              <div className="h-48 w-full relative overflow-hidden flex items-center justify-center">
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center`}>
+                    <span className="text-white/80 font-bold tracking-widest mix-blend-overlay">PROJETO</span>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
               </div>
+
               <div className="p-8 flex flex-col flex-grow">
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, i) => (
@@ -84,8 +89,8 @@ export default function PortfolioPage() {
                 <h3 className="text-xl font-bold text-slate-100 mb-3">{project.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">{project.description}</p>
                 <div className="flex items-center gap-6 mt-auto pt-6 border-t border-slate-800/60">
-                  <a href={project.liveUrl} className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-blue-400"><ExternalLink size={18} /> Live</a>
-                  <a href={project.githubUrl} className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white"><Github size={18} /> Código</a>
+                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-blue-400"><ExternalLink size={18} /> Live</a>
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white"><Github size={18} /> Código</a>
                 </div>
               </div>
             </motion.div>
