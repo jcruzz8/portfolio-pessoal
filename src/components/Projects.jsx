@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 export default function Projects() {
   const projects = [
     {
-      title: "Portfólio Web Developer",
-      description: "Construído de raiz para demonstrar as minhas competências em desenvolvimento front-end moderno. Destaca-se pelas animações fluidas e performance otimizada.",
+      title: "Vitoria Clube de Futebol - Website Oficial",
+      description: "Construído de raíz para um clube desportivo em React e Tailwind, integrando Supabase para gestão de notícias e Google Sheets como um CMS customizado para resultados desportivos.",
       tags: ["React", "Tailwind CSS", "JavaScript"],
-      liveUrl: "https://josecruzportfolio.pt/",
-      githubUrl: "https://github.com/jcruzz8/portfolio-pessoal",
-      image: "/projetos/portfolio-preview.png",
+      liveUrl: "https://vitoriacl.pt/",
+      githubUrl: "https://github.com/jcruzz8/SiteOficialVitoriaClubeDeLisboa",
+      image: "/projetos/vitoriacl-preview.png",
       gradient: "from-blue-600 to-cyan-500"
     },
     {
@@ -23,7 +23,7 @@ export default function Projects() {
       gradient: "from-emerald-500 to-teal-500"
     },
     {
-      title: "Stalker.ia - Landing Page Corporativa",
+      title: "Stalker.ia - Landing Page",
       description: "Desenvolvimento de uma plataforma web de alta performance para uma agência de Automação de IA. Construída com Next.js e TypeScript para máxima velocidade e SEO, com estilização responsiva em Tailwind CSS.",
       tags: ["React", "Tailwind CSS", "JavaScript", "TypeScript", "Next.js"],
       liveUrl: "https://www.stalkeragent.pt/",
